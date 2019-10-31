@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+	<title>Document</title>
+	<style>
+		.column{
+			float: left;
+		}
+		.left{
+			width: 30%;
+		}
+		.right{
+			width: 70%;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
+<script src="library.js"></script>	
+	
+</head>
+
+<body onload="createTable.main()">
+	<h1>Perpustakan Sederhana</h1><br>
+	<p> Daftar buku diambil dari data JSON yang terdapat dalam file library.js</p>
+	<p>Klik "Tambah Buku" untuk menambahkan buku baru. </p>
+	<h2>Daftar Buku Saat Ini::</h2>
+	<table id="table"></table>
+	<input onclick="unhide(this)" id="1" type="button" value="Tambah Buku">
+	<form hidden id="formAddBook" target="self">
+		<fieldset id="bukuBaru">
+			<legend>Tambah Buku</legend>
+			<h3>Isi Form dan Klik "Simpan"</h3>
+			<label>Judul: <input id="judul" type ="text" name="judul" maxlength="100" autofocus></label><br>
+			<label>Sub Judul: <input type ="text" name="sub judul" maxlength="100"></label><br>
+			<label>Pengarang: <input type ="text" name="pengarang" maxlength="100"></label><br>
+			<label>Penerbit: <input type ="text" name="penerbit" maxlength="100"></label><br>
+			<label>Jam Baca: <input type ="text" name="jam baca" maxlength="100"></label><br>
+			<label>Jam Edit: <input type ="text" name="jam edit" maxlength="100"></label><br>
+		</fieldset>
+			<input id="2" onclick="unhide(this)" type="button" value="Tambahkan Kolom Baru..."><br>
+			<div id="addColumn" hidden>
+					<fieldset id="kolomBaru">
+						<label>Nama Kolom: <input autofocus type ="text"></label> <label>Isi Kolom: <input type ="text" maxlength="100"></label><br>
+					</fieldset>
+				<a id="3" onclick="addFormField()">tambah kolom lagi...</a>
+			</div>
+			<input id="add" onclick="addBook()" type="button" value="Simpan">
+	</form>
+	<script>
+		// function unhide(item) ada di table.js
+		let elements1 = document.querySelectorAll("#kolomBaru input[type=text]")
+let elements2 = document.querySelectorAll("#bukuBaru input[type=text]")
+let keyAndValue = []
+
+
+	</script>
+
+</body>
+<script>
+	let table = document.querySelector("table")
+	// variabel diatas akan dipakai pada script table.js di bawah
+</script>
+<script src="table.js"></script>
+</html>	
